@@ -48,9 +48,8 @@ jobs:
                   password: ${{ secrets.DOCKER_PASSWORD }}
         -   name: Build Docker image
             run: |
-                      docker buildx create --use
-                      docker buildx build --platform linux/amd64,linux/arm64 -t peerodds/rubyonrails:latest
-                        
+                 docker buildx create --use
+                 docker buildx build --platform linux/amd64,linux/arm64 -t peerodds/rubyonrails:latest      
         -   name: Push Docker image
             run: docker push peerodds/rubyonrails:latest
     # deploy:
