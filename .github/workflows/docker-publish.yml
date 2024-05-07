@@ -44,7 +44,7 @@ jobs:
         -   name: Build Docker image
             run: |
                 docker buildx create --use
-                docker buildx build -t peerodds/rubyonrails:latest
+                docker buildx build --platform linux/amd64,linux/arm64 -t peerodds/rubyonrails:latest
         -   name: Log in to Docker Hub
             uses: docker/login-action@v1
             with: 
